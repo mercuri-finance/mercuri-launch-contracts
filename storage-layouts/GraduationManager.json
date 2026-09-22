@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "contract": "GraduationManager",
+  "members": [
+    {
+      "label": "factory",
+      "slot": "0",
+      "offset": 0,
+      "type": "contract ILaunchFactory",
+      "layout": {
+        "type": "contract ILaunchFactory",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "poolManager",
+      "slot": "1",
+      "offset": 0,
+      "type": "contract IPoolManager",
+      "layout": {
+        "type": "contract IPoolManager",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "positionManager",
+      "slot": "2",
+      "offset": 0,
+      "type": "contract IPositionManager",
+      "layout": {
+        "type": "contract IPositionManager",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "permit2",
+      "slot": "3",
+      "offset": 0,
+      "type": "contract IAllowanceTransfer",
+      "layout": {
+        "type": "contract IAllowanceTransfer",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "hook",
+      "slot": "4",
+      "offset": 0,
+      "type": "address",
+      "layout": {
+        "type": "address",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "locker",
+      "slot": "5",
+      "offset": 0,
+      "type": "contract LiquidityLocker",
+      "layout": {
+        "type": "contract LiquidityLocker",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "feeManager",
+      "slot": "6",
+      "offset": 0,
+      "type": "contract IFeeManager",
+      "layout": {
+        "type": "contract IFeeManager",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "usdc",
+      "slot": "7",
+      "offset": 0,
+      "type": "address",
+      "layout": {
+        "type": "address",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    }
+  ]
+}

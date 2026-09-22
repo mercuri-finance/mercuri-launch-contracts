@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 2,
+  "contract": "LaunchFactory",
+  "members": [
+    {
+      "label": "feeManager",
+      "slot": "0",
+      "offset": 0,
+      "type": "contract IFeeManager",
+      "layout": {
+        "type": "contract IFeeManager",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "graduationManager",
+      "slot": "1",
+      "offset": 0,
+      "type": "address",
+      "layout": {
+        "type": "address",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "treasury",
+      "slot": "2",
+      "offset": 0,
+      "type": "address",
+      "layout": {
+        "type": "address",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "guardian",
+      "slot": "3",
+      "offset": 0,
+      "type": "address",
+      "layout": {
+        "type": "address",
+        "encoding": "inplace",
+        "numberOfBytes": "20"
+      }
+    },
+    {
+      "label": "configHash",
+      "slot": "4",
+      "offset": 0,
+      "type": "bytes32",
+      "layout": {
+        "type": "bytes32",
+        "encoding": "inplace",
+        "numberOfBytes": "32"
+      }
+    },
+    {
+      "label": "curveOf",
+      "slot": "5",
+      "offset": 0,
+      "type": "mapping(address => address)",
+      "layout": {
+        "type": "mapping(address => address)",
+        "encoding": "mapping",
+        "numberOfBytes": "32",
+        "key": {
+          "type": "address",
+          "encoding": "inplace",
+          "numberOfBytes": "20"
+        },
+        "value": {
+          "type": "address",
+          "encoding": "inplace",
+          "numberOfBytes": "20"
+        }
+      }
+    },
+    {
+      "label": "config",
+      "slot": "6",
+      "offset": 0,
+      "type": "struct LaunchConfig",
+      "layout": {
+        "type": "struct LaunchConfig",
+        "encoding": "inplace",
+        "numberOfBytes": "224",
+        "members": [
+          {
+            "label": "virtualUsdc",
+            "slot": "0",
+            "offset": 0,
+            "type": "uint256",
+            "layout": {
+              "type": "uint256",
+              "encoding": "inplace",
+              "numberOfBytes": "32"
+            }
+          },
+          {
+            "label": "virtualTokens",
+            "slot": "1",
+            "offset": 0,
+            "type": "uint256",
+            "layout": {
+              "type": "uint256",
+              "encoding": "inplace",
+              "numberOfBytes": "32"
+            }
+          },
+          {
+            "label": "curveSupply",
+            "slot": "2",
+            "offset": 0,
+            "type": "uint256",
+            "layout": {
+              "type": "uint256",
+              "encoding": "inplace",
+              "numberOfBytes": "32"
+            }
+          },
+          {
+            "label": "poolSupply",
+            "slot": "3",
+            "offset": 0,
+            "type": "uint256",
+            "layout": {
+              "type": "uint256",
+              "encoding": "inplace",
+              "numberOfBytes": "32"
+            }
+          },
+          {
+            "label": "launchFee",
+            "slot": "4",
+            "offset": 0,
+            "type": "uint256",
+            "layout": {
+              "type": "uint256",
+              "encoding": "inplace",
+              "numberOfBytes": "32"
+            }
+          },
+          {
+            "label": "maxInitialBuyTokens",
+            "slot": "5",
+            "offset": 0,
+            "type": "uint256",
+            "layout": {
+              "type": "uint256",
+              "encoding": "inplace",
+              "numberOfBytes": "32"
+            }
+          },
+          {
+            "label": "tradeFeeBps",
+            "slot": "6",
+            "offset": 0,
+            "type": "uint16",
+            "layout": {
+              "type": "uint16",
+              "encoding": "inplace",
+              "numberOfBytes": "2"
+            }
+          },
+          {
+            "label": "creatorShareBps",
+            "slot": "6",
+            "offset": 2,
+            "type": "uint16",
+            "layout": {
+              "type": "uint16",
+              "encoding": "inplace",
+              "numberOfBytes": "2"
+            }
+          },
+          {
+            "label": "referrerShareBps",
+            "slot": "6",
+            "offset": 4,
+            "type": "uint16",
+            "layout": {
+              "type": "uint16",
+              "encoding": "inplace",
+              "numberOfBytes": "2"
+            }
+          },
+          {
+            "label": "snipeStartBps",
+            "slot": "6",
+            "offset": 6,
+            "type": "uint16",
+            "layout": {
+              "type": "uint16",
+              "encoding": "inplace",
+              "numberOfBytes": "2"
+            }
+          },
+          {
+            "label": "snipeBlocks",
+            "slot": "6",
+            "offset": 8,
+            "type": "uint32",
+            "layout": {
+              "type": "uint32",
+              "encoding": "inplace",
+              "numberOfBytes": "4"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
