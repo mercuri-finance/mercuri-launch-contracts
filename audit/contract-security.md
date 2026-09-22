@@ -34,7 +34,7 @@ control of all three signers and creation of new wallets with separate recovery 
 supersedes the earlier proposed MacBook/iPhone/second-computer allocation and is device/key separation, not independent
 human approval. Generation provenance is owner-attested. All three signers have participated in verified live
 Safe threshold transactions. Device-security verification, ongoing backup separation and private backup restoration
-remain separate checks; follow the [signer recovery runbook](runbooks/safe-signer-recovery.md).
+remain separate checks; follow the signer recovery runbook (internal).
 
 Factory upgrades change the curve creation code for future launches only, but can also alter the registry that
 GraduationManager consults for existing launches. They cannot patch already deployed curves,
@@ -102,7 +102,7 @@ Recovery therefore branches on current phase: Pending → direct graduate(); Tra
 buy. The existing frontend exposes both actions. The nested-OOG g0/63 heuristic does not reliably catch
 that failure; the fixed gas floor needs renewed budget checks for upgrades. The curve sees a shared router
 as msg.sender, so that router's first referrer applies to later users and attribution is unreliable.
-See the [critical-pass remediation and precise acceptance](reports/2026-09-21-critical-pass-remediation.md).
+See the [critical-pass remediation and precise acceptance](2026-09-21-critical-pass-remediation.md).
 These decisions do not accept all remaining risks or authorize deployment.
 
 ## Documentation and release checks
@@ -125,14 +125,14 @@ Run the full build before targeted integration tests; the pinned Foundry version
 PositionManager artifact loaded by the fixture. Preserve testnet deployment records. A candidate with changed FeeManager
 or hook runtime intentionally differs from the live testnet release and needs fresh deployment/rehearsal evidence.
 
-The [independent agent review](reports/2026-09-21-independent-contract-audit.md) and
-[remediation record](reports/2026-09-21-independent-audit-remediation.md) distinguish reviewed findings from
+The [independent agent review](2026-09-21-independent-contract-audit.md) and
+[remediation record](2026-09-21-independent-audit-remediation.md) distinguish reviewed findings from
 owner risk acceptance. The storage guard now traverses mapped structs and array elements. Upgrade preflight
 checks ownership, wiring, selected accounting/configuration state, locked implementation initialization and
 a second upgrade; these checks do not enumerate every mapping entry or prove future logic safe. Intentional
 state/wiring migrations require a separate reviewed procedure. Fresh deployment record promotion also requires
 exact hook, locker and implementation runtime matches, with immutable addresses reconstructed from the record.
 
-The release gate remains [mainnet-handover.md](handoff/mainnet-handover.md#8-launch-gate), including independent audit or
+The release gate remains the mainnet handover launch gate (internal), including independent audit or
 explicitly accepted residual risks, verified Safes and the full deployment rehearsal. Dependency source identity is in
-[lib-versions.md](../contracts/lib-versions.md). Internal tests alone do not close that gate.
+[lib-versions.md](../lib-versions.md). Internal tests alone do not close that gate.

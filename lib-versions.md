@@ -37,12 +37,12 @@ Archive/recheck the executable's SHA-256 with release evidence; do not present t
 Static analysis in the internal review used Slither 0.11.6.
 
 Pinning does not imply absence of compiler defects. The 2026-09-21 internal review screened published advisories
-against source/build settings; see [the compiler advisory screen](../docs/reports/2026-09-21-contract-readiness.md#compiler-advisory-screen).
+against source/build settings; see the compiler advisory screen in the internal contract-readiness report.
 Applicability and any compiler change require release sign-off and refreshed deployment evidence.
 
 ## Upstream comparison follow-up — 2026-09-21
 
-[Machine-readable source comparisons](../docs/reports/2026-09-21-dependency-source-comparison.json)
+Machine-readable source comparisons (internal release evidence)
 recover exact Solidity-subtree correspondence for all six packages:
 
 | Package | Upstream reference | Matching Solidity files |
@@ -58,5 +58,5 @@ All 91 library files in the 107-source deployment compilation map to these
 comparisons. Forge-std's six differences from the v1.16.2 tag are explained by
 the recovered upstream revision. No vendored file was replaced. The scope excludes
 non-Solidity files and unused nested dependency trees. Source provenance does not
-establish audit coverage: see [audit mapping](../docs/reports/2026-09-21-dependency-audit-mapping.json)
-and [the release preparation report](../docs/reports/2026-09-21-release-preparation.md).
+establish audit coverage: see the internal audit mapping
+and the internal release preparation report.

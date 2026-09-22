@@ -39,7 +39,7 @@ must mine again using the final build and current nonce; no mainnet address is i
   as do the four prior comparator self-tests and seven new storage regressions.
 - NatSpec: **107 ABI entries, zero failures**. Changed Solidity formatting, shell syntax and
   Git whitespace checks pass.
-- [Refreshed compiler evidence](2026-09-21-audit-remediation-compiler-evidence.json): **107 source
+- Refreshed compiler evidence (internal release evidence): **107 source
   identities; all 10 creation/runtime targets reproduced exactly** with pinned solc 0.8.26.
   The screened named-error/Yul recursion triggers remain absent. Only LaunchHook and the Deploy
   script embedding it differ from the prior evidence. Hook runtime grows **3,390 → 3,448 bytes**;
@@ -68,7 +68,7 @@ Implementation checkpoint: `f9ab5a18ce26e4303ce33c79419f488a144c2175` on
 `release/mainnet-preparation-2026-09-21`. The original three preparation commits are retained;
 local `main` remains at `8e902eb6b83e3c61d9af6ad8fbb4efe1431177af`. Nothing was pushed.
 
-[Refreshed candidate manifest](2026-09-21-audit-remediation-candidate-manifest.json):
+Refreshed candidate manifest (internal release evidence):
 **3122 selected source/config files**, with every current file and archive member checked.
 Source manifest SHA-256: `227f3d9cff4d6c1cf327774f6ac250ad75b129fcc5b933c6c8a8fd6488a896d9`.
 Archive SHA-256: `e4d4896285388eda8c1b48b2e5f8d6445ad5962100ed723267878de40e1e16bc`.

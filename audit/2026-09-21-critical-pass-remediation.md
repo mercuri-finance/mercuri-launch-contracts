@@ -2,7 +2,7 @@
 
 This follows authoritative sections 9–10 of the
 [independent critical-pass review](2026-09-21-independent-contract-audit-critical-pass.md)
-and its [implementation handoff](2026-09-21-critical-pass-handoff-brief.md).
+and its implementation handoff (internal).
 The original independent report and the preceding remediation evidence remain unchanged.
 No production Solidity source, live deployment, frontend repository, remote resource or DNS is changed.
 
@@ -141,10 +141,10 @@ Failed intermediate attempts are retained; they are not counted as passing evide
 ### Frozen identity and preservation
 
 Code checkpoint: `2c782aca1353d01e8d260dd1276c1b9693c40996`, local branch `release/mainnet-preparation-2026-09-21`.
-The [candidate manifest](2026-09-21-critical-pass-candidate-manifest.json) covers **3,137 selected inputs**;
+The candidate manifest (internal release evidence) covers **3,137 selected inputs**;
 source-manifest SHA-256: `fac6812c7eb939da72c1d2a12a3e559ea8162cace2c0a6332c659469c5625026`.
 Archive SHA-256: `6c449d4b2fa6b6d0b5371b993da2d98a14f535bc18d5a0c8f5a4e0b84089dce0`.
-See the [compiler evidence](2026-09-21-critical-pass-compiler-evidence.json) for the ten exact bytecode
+See the compiler evidence (internal release evidence) for the ten exact bytecode
 comparisons and unchanged 107-source closure.
 
 All earlier commits and live testnet records remain intact. No source in `contracts/src/` changed.
