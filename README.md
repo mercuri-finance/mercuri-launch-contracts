@@ -180,6 +180,11 @@ and recovered upstream revisions.
 public Arc RPC and compares it with the freshly compiled artifacts, masking only the immutable-variable slots that are
 filled at deployment. Run on 22 September 2026 against `rpc.mainnet.arc.io`: all five matched byte for byte.
 
+The source is also published on the explorer and on Sourcify for all eight addresses (five contracts and the three
+proxies): [Sourcify](https://repo.sourcify.dev/5042/0x8f5DfA0c48E14cCD03AE01795B8a95759BA859EB) reports a full match
+of creation and runtime bytecode. The explorer labels the same code *partial match* because the build sets
+`bytecode_hash = "none"`, so there is no metadata hash in the bytecode for it to compare; the code itself is identical.
+
 ## Security
 
 | | |
