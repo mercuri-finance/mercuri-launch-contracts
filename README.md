@@ -184,7 +184,7 @@ filled at deployment. Run on 22 September 2026 against `rpc.mainnet.arc.io`: all
 
 | | |
 | --- | --- |
-| [Independent contract review](audit/2026-09-21-independent-contract-audit.md) | Review of the release candidate, 21 September 2026: no exploitable defect found; one tooling defect and one design decision, both addressed. |
+| [Contract review](audit/2026-09-21-independent-contract-audit.md) | Review of the release candidate, 21 September 2026, by an AI reviewer with no part in writing the code: no exploitable defect found; one tooling defect and one design decision, both addressed. |
 | [Remediation](audit/2026-09-21-independent-audit-remediation.md) | What changed in response, with evidence. |
 | [Critical pass](audit/2026-09-21-independent-contract-audit-critical-pass.md) · [remediation](audit/2026-09-21-critical-pass-remediation.md) | A second, adversarial pass on the remediated candidate. |
 | [Security assumptions](audit/contract-security.md) | What the contracts rely on, and the governance model: three 2-of-3 Safes and a 48-hour timelock on every change. |
@@ -194,8 +194,9 @@ The reviews were written inside the private working repository and mention evide
 there. Those mentions are left as written and marked *internal*; the findings, the reasoning and the remediation
 diffs are complete in the reports themselves.
 
-No professional third-party audit has been performed yet. Read the reviews before relying on the contracts. To
-report a vulnerability, see [`SECURITY.md`](SECURITY.md).
+These are AI-assisted reviews with their evidence published, not an audit by a security firm; no third-party audit
+has been performed yet. Read them before relying on the contracts. To report a vulnerability, see
+[`SECURITY.md`](SECURITY.md).
 
 ## License
 

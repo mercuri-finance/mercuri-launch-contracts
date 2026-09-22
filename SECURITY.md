@@ -21,7 +21,7 @@ trust boundary rather than a defect.
 
 ## What already exists
 
-- Two independent review passes with published remediation, in [`audit/`](audit).
+- Two AI-assisted review passes with published remediation, in [`audit/`](audit).
 - Reproducible bytecode: `python3 script/verify-runtime.py` after `forge build`.
 - Every configuration change goes through a 48-hour timelock; the only emergency lever is pausing new launches.
 
