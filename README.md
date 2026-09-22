@@ -1,19 +1,30 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-  <img src="assets/banner-light.png" alt="mercuri launch — Name it. Sign once. It trades in dollars." width="100%">
-</picture>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
+    <img src="assets/banner-light.png" alt="mercuri launch — Name it. Sign once. It trades in dollars." width="100%">
+  </picture>
+</p>
 
-<h1>
-  <img src="assets/mark.svg" width="28" height="28" align="top" alt="">
-  mercuri launch · contracts
-</h1>
+<p align="center">
+  <img src="assets/mark.svg" width="56" height="56" alt="">
+</p>
 
-[![Arc mainnet](https://img.shields.io/badge/Arc_mainnet-chain_5042-43459D?style=flat-square)](https://explorer.arc.io/address/0x8f5DfA0c48E14cCD03AE01795B8a95759BA859EB)
-[![Version](https://img.shields.io/badge/release-v1.0.0-1B3158?style=flat-square)](deployments/5042.json)
-[![Bytecode](https://img.shields.io/badge/bytecode-reproducible-1B3158?style=flat-square)](#build-and-verify)
-[![Solidity](https://img.shields.io/badge/solidity-0.8.26-1B3158?style=flat-square)](foundry.toml)
-[![Uniswap v4](https://img.shields.io/badge/liquidity-Uniswap_v4-1B3158?style=flat-square)](src/LaunchHook.sol)
-[![License](https://img.shields.io/badge/license-MIT-1B3158?style=flat-square)](LICENSE)
+<h1 align="center">mercuri launch · contracts</h1>
+
+<p align="center">
+  <a href="https://explorer.arc.io/address/0x8f5DfA0c48E14cCD03AE01795B8a95759BA859EB"><img src="https://img.shields.io/badge/Arc_mainnet-chain_5042-43459D?style=flat-square" alt="Arc mainnet, chain 5042"></a>
+  <a href="deployments/5042.json"><img src="https://img.shields.io/badge/release-v1.0.0-1B3158?style=flat-square" alt="release v1.0.0"></a>
+  <a href="#build-and-verify"><img src="https://img.shields.io/badge/bytecode-reproducible-1B3158?style=flat-square" alt="bytecode reproducible"></a>
+  <a href="foundry.toml"><img src="https://img.shields.io/badge/solidity-0.8.26-1B3158?style=flat-square" alt="Solidity 0.8.26"></a>
+  <a href="src/LaunchHook.sol"><img src="https://img.shields.io/badge/liquidity-Uniswap_v4-1B3158?style=flat-square" alt="Uniswap v4"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-1B3158?style=flat-square" alt="MIT license"></a>
+</p>
+
+<p align="center">
+  <a href="https://launch.mercuri.finance">launch.mercuri.finance</a> ·
+  <a href="https://docs.mercuri.finance">docs.mercuri.finance</a> ·
+  <a href="https://launch-api.mercuri.finance/v1/stats">public API</a>
+</p>
 
 The Solidity source of **[launch.mercuri.finance](https://launch.mercuri.finance)**, a token launchpad on Arc, exactly
 as deployed to mainnet on 21 September 2026. Contracts, the vendored dependencies they were compiled against, the
@@ -50,22 +61,12 @@ Full records with the governance roles: [`deployments/5042.json`](deployments/50
 
 ## How it works
 
-```mermaid
-flowchart LR
-    C([Creator]) -->|createToken · 1 USDC| F[LaunchFactory]
-    F -->|deploys| T[LaunchToken]
-    F -->|deploys| B[BondingCurve]
-    Tr([Traders]) -->|buy / sell in USDC| B
-    B -->|curve sells out| G[GraduationManager]
-    G -->|opens pool at last price| P[(Uniswap v4 pool)]
-    G -->|full-range position| L[LiquidityLocker]
-    P -.->|every swap| H[LaunchHook]
-    B -->|1% trade fee · snipe tax| M[FeeManager]
-    H -->|1% trade fee| M
-    M -->|0.50%| C
-    M -->|0.20%| R([Referrer])
-    M -->|rest| Ty[(Treasury)]
-```
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/lifecycle-dark.png">
+    <img src="assets/lifecycle-light.png" alt="A token's life: launch at block 0, opening with the snipe tax over the first 60 seconds, trading on the curve, graduation when 800M tokens are sold, then trading in the pool." width="600">
+  </picture>
+</p>
 
 1. **Launch.** One transaction creates the token and its curve. The launch fee is read live from the factory.
    Anything sent above it buys the creator's first tokens in the same transaction, tax-free, up to 5% of supply.
@@ -107,6 +108,29 @@ timelock and applies to launches created after it.
 | Curve | 6,000 USDC virtual reserve · 800,000,000 tokens sold on the curve · 200,000,000 to the pool |
 | Graduation | about 18,000 USDC collected; market cap from about $5,600 to about $90,000, 16× the opening price |
 | Hook fee ceiling | 5%, fixed in the hook's bytecode |
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/curve-dark.png">
+    <img src="assets/curve-light.png" alt="Market cap against tokens sold from the curve: about $5,625 at launch, about $90,000 at graduation with 18,000 USDC collected." width="600">
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/fee-split-dark.png">
+    <img src="assets/fee-split-light.png" alt="The 1% trade fee split: 0.50% creator, 0.20% referrer, 0.30% platform with a referrer; 0.50% creator, 0.50% platform without." width="600">
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/snipe-tax-dark.png">
+    <img src="assets/snipe-tax-light.png" alt="The snipe tax on buys: 99% in the launch block, falling in a straight line to zero over 120 blocks." width="600">
+  </picture>
+</p>
+
+The figures are the ones on [docs.mercuri.finance](https://docs.mercuri.finance) ([the curve](https://docs.mercuri.finance/curve), [fees](https://docs.mercuri.finance/fees)), drawn from the deployed configuration.
 
 ## Events
 
