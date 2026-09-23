@@ -1,0 +1,3 @@
+# Separate Mercurifi contracts repository — Codex
+
+This is a separate Git repository. The parent `arc.launch/contracts/` holds the current canonical deployed records and audit/runbook context; compare both histories and working trees before applying a change here. Read `../docs/handoff/mainnet-handover.md`, `../docs/runbooks/mainnet-application.md` and the current audit reports. Run local Foundry checks appropriate to the change; do not broadcast, upgrade, alter Safe/governance or rewrite deployment records without the specific release authorization. Never read `.env` or disclose signer material. The local `.agents/skills/mercuri-contract-release/` provides the review path.

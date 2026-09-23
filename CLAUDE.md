@@ -1,0 +1,3 @@
+# Separate Mercurifi contracts repository — Claude
+
+This is a separate Git repository. The parent `arc.launch/contracts/` holds the current canonical deployed records. Compare histories before changing or deploying from this checkout. Read `../docs/handoff/mainnet-handover.md`, `../docs/runbooks/mainnet-application.md` and the current audit reports. Run relevant Foundry checks locally. A dry-run or application deployment request does not authorize broadcast, upgrade, Safe/governance action or record rewrite. Do not read `.env` or expose signer material. Use `.claude/skills/mercuri-contract-release/` for a proposed release.
