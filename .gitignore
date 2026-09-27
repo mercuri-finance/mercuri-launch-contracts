@@ -4,3 +4,6 @@ broadcast/
 .env
 .env.*
 .DS_Store
+
+# Audit records live in the internal docs repository, not in the public contracts repo.
+audit/

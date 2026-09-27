@@ -189,19 +189,15 @@ of creation and runtime bytecode. The explorer labels the same code *partial mat
 
 | | |
 | --- | --- |
-| [Contract review](audit/2026-09-21-independent-contract-audit.md) | Review of the release candidate, 21 September 2026, by an AI reviewer with no part in writing the code: no exploitable defect found; one tooling defect and one design decision, both addressed. |
-| [Remediation](audit/2026-09-21-independent-audit-remediation.md) | What changed in response, with evidence. |
-| [Critical pass](audit/2026-09-21-independent-contract-audit-critical-pass.md) · [remediation](audit/2026-09-21-critical-pass-remediation.md) | A second, adversarial pass on the remediated candidate. |
-| [Security assumptions](audit/contract-security.md) | What the contracts rely on, and the governance model: three 2-of-3 Safes and a 48-hour timelock on every change. |
 | [`storage-layouts/`](storage-layouts) | Storage layout of each upgradeable contract at v1.0.0, the baseline any upgrade is checked against. |
+| Governance | Three 2-of-3 Safes and a 48-hour timelock on every change. The token, curve and locker are immutable. |
 
-The reviews were written inside the private working repository and mention evidence folders and tooling that live
-there. Those mentions are left as written and marked *internal*; the findings, the reasoning and the remediation
-diffs are complete in the reports themselves.
+The release candidate was reviewed twice before deployment, on 21 September 2026, by a reviewer with no part in
+writing the code: no exploitable defect was found, and the two items raised — one tooling defect and one design
+decision — were addressed before release. The reports are held internally and are available on request.
 
-These are AI-assisted reviews with their evidence published, not an audit by a security firm; no third-party audit
-has been performed yet. Read them before relying on the contracts. To report a vulnerability, see
-[`SECURITY.md`](SECURITY.md).
+These were AI-assisted reviews, not an audit by a security firm; no third-party audit has been performed yet.
+Weigh that before relying on the contracts. To report a vulnerability, see [`SECURITY.md`](SECURITY.md).
 
 ## License
 

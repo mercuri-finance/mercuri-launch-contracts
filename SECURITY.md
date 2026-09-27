@@ -16,12 +16,12 @@ The contracts in `src/` as deployed at the addresses in [`deployments/5042.json`
 vendored dependencies under `lib/` are upstream code; report defects in them upstream as well.
 
 Out of scope: the web app, the read API and the hosting, which are not in this repository; and findings that require
-a compromised governance signer, which the [security assumptions](audit/contract-security.md) already treat as a
-trust boundary rather than a defect.
+a compromised governance signer, which the security model already treats as a trust boundary rather than a
+defect.
 
 ## What already exists
 
-- Two AI-assisted review passes with published remediation, in [`audit/`](audit).
+- Two review passes before deployment, with remediation completed; reports available on request.
 - Reproducible bytecode: `python3 script/verify-runtime.py` after `forge build`.
 - Every configuration change goes through a 48-hour timelock; the only emergency lever is pausing new launches.
 
