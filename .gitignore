@@ -4,6 +4,8 @@ broadcast/
 .env
 .env.*
 .DS_Store
+__pycache__/
+test-export/
 
 # Audit records live in the internal docs repository, not in the public contracts repo.
 audit/

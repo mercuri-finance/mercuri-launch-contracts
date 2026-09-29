@@ -168,7 +168,9 @@ A public read API mirrors the chain: [`launch-api.mercuri.finance/v1/stats`](htt
 
 ```sh
 forge build
-python3 script/verify-runtime.py
+bash script/check-contracts.sh
+# Read-only runtime verification after a build:
+ARC_RPC=<your RPC URL> python3 script/verify-runtime.py --record deployments/5042.json
 ```
 
 `forge build` uses the pinned settings in [`foundry.toml`](foundry.toml): Solidity 0.8.26, Cancun, via-IR, per-path
@@ -176,9 +178,10 @@ optimizer runs, no metadata hash. The `lib/` tree is committed as plain files so
 review used is the source you compile; [`lib-versions.md`](lib-versions.md) records the package versions, tree hashes
 and recovered upstream revisions.
 
-[`script/verify-runtime.py`](script/verify-runtime.py) fetches the runtime code of the five protocol contracts from a
-public Arc RPC and compares it with the freshly compiled artifacts, masking only the immutable-variable slots that are
-filled at deployment. Run on 22 September 2026 against `rpc.mainnet.arc.io`: all five matched byte for byte.
+[`script/verify-runtime.py`](script/verify-runtime.py) reads runtime code at one block from the supplied Arc RPC,
+checks the chain ID and compares it with the freshly compiled artifacts. It reconstructs immutable address values
+from the deployment record and requires every byte to match. The original deployed-source comparison on 22
+September 2026 found all five matches; rerun the current verifier against the target chain for new release evidence.
 
 The source is also published on the explorer and on Sourcify for all eight addresses (five contracts and the three
 proxies): [Sourcify](https://repo.sourcify.dev/5042/0x8f5DfA0c48E14cCD03AE01795B8a95759BA859EB) reports a full match

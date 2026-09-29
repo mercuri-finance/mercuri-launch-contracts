@@ -1,9 +1,9 @@
 # Contributing
 
-This repository is the published record of the mercuri launch contracts as deployed on Arc. Its purpose is that
-anyone can read the code behind the addresses, rebuild it and check the bytecode. It is not the working repository,
-so it does not take pull requests: a change to a deployed contract is a new release, made through the timelock and
-recorded here afterwards with its deployment record and review.
+This public repository owns the mercuri launch contracts as deployed on Arc, including their tests and release
+tooling. Anyone can read the code behind the addresses, rebuild it and check the bytecode. A change to a deployed
+contract requires a new reviewed release and the applicable timelock process. Pull requests are reviewed, but
+merging one never authorizes a contract transaction.
 
 ## What is welcome
 
@@ -15,15 +15,18 @@ recorded here afterwards with its deployment record and review.
 
 ## What happens to a pull request
 
-It is read, and closed with a note. If it points at a real defect it becomes an issue and, where warranted, a
-release; the report is credited in the release notes if you want it to be.
+Changes are reviewed against the deployed source, storage layout, tests and release evidence. A merged change
+does not alter deployed contracts. Security reports belong in the private reporting channel above.
 
 ## Building
 
 ```sh
 forge build
-python3 script/verify-runtime.py
+bash script/check-contracts.sh
+# Read-only runtime check after a build, with a matching deployment record:
+ARC_RPC=<your RPC URL> python3 script/verify-runtime.py --record deployments/5042.json
 ```
 
-`forge build` uses the pinned toolchain in `foundry.toml` and the vendored `lib/` tree; nothing needs installing
-beyond Foundry. The verify script needs only Python 3 and a public Arc RPC.
+`forge build` uses the pinned toolchain in `foundry.toml` and the vendored `lib/` tree. The contract gate also
+needs Python 3. The runtime verifier reads the RPC URL from the process environment, checks the chain ID and
+compares every runtime byte, including reconstructed immutable values, at one pinned block.
