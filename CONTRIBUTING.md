@@ -1,6 +1,6 @@
 # Contributing
 
-This public repository owns the mercuri launch contracts as deployed on Arc, including their tests and release
+This public repository owns the Mercurifi Launch contracts as deployed on Arc, including their tests and release
 tooling. Anyone can read the code behind the addresses, rebuild it and check the bytecode. A change to a deployed
 contract requires a new reviewed release and the applicable timelock process. Pull requests are reviewed, but
 merging one never authorizes a contract transaction.

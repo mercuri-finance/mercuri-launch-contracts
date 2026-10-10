@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-    <img src="assets/banner-light.png" alt="mercuri launch — Name it. Sign once. It trades in dollars." width="100%">
+    <img src="assets/banner-light.png" alt="Mercurifi Launch — Name it. Sign once. It trades in dollars." width="100%">
   </picture>
 </p>
 
@@ -9,15 +9,15 @@
   <img src="assets/mark.svg" width="56" height="56" alt="">
 </p>
 
-<h1 align="center">mercuri launch · contracts</h1>
+<h1 align="center">Mercurifi Launch · contracts</h1>
 
 <p align="center">
-  <a href="https://explorer.arc.io/address/0x8f5DfA0c48E14cCD03AE01795B8a95759BA859EB"><img src="https://img.shields.io/badge/Arc_mainnet-chain_5042-43459D?style=flat-square" alt="Arc mainnet, chain 5042"></a>
-  <a href="deployments/5042.json"><img src="https://img.shields.io/badge/release-v1.0.0-1B3158?style=flat-square" alt="release v1.0.0"></a>
-  <a href="#build-and-verify"><img src="https://img.shields.io/badge/bytecode-reproducible-1B3158?style=flat-square" alt="bytecode reproducible"></a>
-  <a href="foundry.toml"><img src="https://img.shields.io/badge/solidity-0.8.26-1B3158?style=flat-square" alt="Solidity 0.8.26"></a>
-  <a href="src/LaunchHook.sol"><img src="https://img.shields.io/badge/liquidity-Uniswap_v4-1B3158?style=flat-square" alt="Uniswap v4"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-1B3158?style=flat-square" alt="MIT license"></a>
+  <a href="https://explorer.arc.io/address/0x8f5DfA0c48E14cCD03AE01795B8a95759BA859EB"><img src="https://img.shields.io/badge/Arc_mainnet-chain_5042-C3E6FF?style=flat-square" alt="Arc mainnet, chain 5042"></a>
+  <a href="deployments/5042.json"><img src="https://img.shields.io/badge/release-v1.0.0-0A0A0A?style=flat-square" alt="release v1.0.0"></a>
+  <a href="#build-and-verify"><img src="https://img.shields.io/badge/bytecode-reproducible-0A0A0A?style=flat-square" alt="bytecode reproducible"></a>
+  <a href="foundry.toml"><img src="https://img.shields.io/badge/solidity-0.8.26-0A0A0A?style=flat-square" alt="Solidity 0.8.26"></a>
+  <a href="src/LaunchHook.sol"><img src="https://img.shields.io/badge/liquidity-Uniswap_v4-0A0A0A?style=flat-square" alt="Uniswap v4"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0A0A0A?style=flat-square" alt="MIT license"></a>
 </p>
 
 <p align="center">
@@ -208,7 +208,7 @@ Weigh that before relying on the contracts. To report a vulnerability, see [`SEC
 
 ---
 
-<sub>mercuri and mercuri launch are independent products. They are not affiliated with, sponsored by or endorsed by
+<sub>Mercurifi and Mercurifi Launch are independent products. They are not affiliated with, sponsored by or endorsed by
 Circle Internet Group, Inc. or its affiliates. Arc and USDC are trademarks of Circle Internet Group, Inc. and/or its
 affiliates, named here only to say which network and which asset the contracts work with. Uniswap is a trademark of
 Uniswap Labs.</sub>
